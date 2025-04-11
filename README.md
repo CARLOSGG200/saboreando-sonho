@@ -1,143 +1,85 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>L.F Luzia & Fernanda Saboreando Sonhos</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: white;
-            color: #333;
-        }
-        header {
-            text-align: center;
-            background-color: red;
-            color: white;
-            padding: 10px 0;
-        }
-        .section-title {
-            font-size: 24px;
-            text-align: center;
-            margin-top: 20px;
-            font-weight: bold;
-        }
-        .products, .combos {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            margin: 20px 0;
-        }
-        .product, .combo {
-            text-align: center;
-            width: 200px;
-            margin: 10px;
-            cursor: pointer;
-        }
-        .product img, .combo img {
-            width: 100%;
-            height: auto;
-        }
-        .product-info, .combo-info {
-            display: none;
-            background-color: #f8f8f8;
-            padding: 10px;
-            margin-top: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-        .popup {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            justify-content: center;
-            align-items: center;
-        }
-        .popup-content {
-            background-color: white;
-            padding: 20px;
-            border-radius: 5px;
-            width: 300px;
-        }
-        .popup-button {
-            margin-top: 10px;
-            background-color: red;
-            color: white;
-            border: none;
-            padding: 10px;
-            cursor: pointer;
-        }
-        .popup-button:hover {
-            background-color: darkred;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>L.F Luzia & Fernanda Saboreando Sonhos</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #fff; color: #222; }
+    header { background-color: #c40000; color: white; padding: 20px; text-align: center; }
+    .menu { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; padding: 20px; }
+    .item { background: white; border-radius: 8px; padding: 15px; text-align: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+    .item img { width: 100%; height: 150px; object-fit: cover; border-radius: 8px; }
+    .item button { margin-top: 10px; background: #c40000; color: white; border: none; padding: 10px 15px; border-radius: 5px; cursor: pointer; }
+    footer { background-color: #222; color: white; text-align: center; padding: 15px; margin-top: 20px; }
+  </style>
 </head>
 <body>
 
-    <header>
-        <h1>L.F Luzia & Fernanda Saboreando Sonhos</h1>
-        <p>Slogan: Saboreando Sonhos</p>
-        <p>WhatsApp: <a href="https://wa.me/84998477906">84 99847-7906</a></p>
-    </header>
+<header>
+  <h1>L.F Luzia & Fernanda Saboreando Sonhos</h1>
+  <p>Saboreando Sonhos</p>
+</header>
 
-    <section class="products">
-        <div class="product" onclick="showPopup('cachorroQuente')">
-            <img src="cachorro-quente.jpg" alt="Cachorro-Quente">
-            <p>Cachorro-Quente</p>
-            <p>R$ 6,00</p>
-            <div class="product-info" id="cachorroQuente">
-                <p>Ingredientes: Pão, salsicha, frango, carne moída, milho, ervilha, batata palha</p>
-            </div>
-        </div>
+<section class="menu">
+  <div class="item">
+    <img src="https://via.placeholder.com/200x150" alt="Cachorro-Quente">
+    <h2>Cachorro-Quente</h2>
+    <p>Pão, salsicha, frango, carne moída, milho, ervilha & batata palha</p>
+    <p>R$ 6,00</p>
+    <button>Adicionar ao Carrinho</button>
+  </div>
 
-        <div class="product" onclick="showPopup('bauru')">
-            <img src="bauru.jpg" alt="Bauru">
-            <p>Bauru</p>
-            <p>R$ 8,00</p>
-            <div class="product-info" id="bauru">
-                <p>Ingredientes: Pão, hambúrguer, ovo, queijo, presunto, tomate, alface</p>
-            </div>
-        </div>
+  <div class="item">
+    <img src="https://via.placeholder.com/200x150" alt="Bauru">
+    <h2>Bauru</h2>
+    <p>Pão, hambúrguer, ovo, queijo, presunto, tomate e alface</p>
+    <p>R$ 8,00</p>
+    <button>Adicionar ao Carrinho</button>
+  </div>
 
-        <!-- Adicionar mais produtos aqui -->
-    </section>
+  <div class="item">
+    <img src="https://via.placeholder.com/200x150" alt="Batata Frita">
+    <h2>Batata Frita M</h2>
+    <p>Simples - R$ 10,00 | Com Calabresa - R$ 15,00</p>
+    <button>Adicionar ao Carrinho</button>
+  </div>
 
-    <section class="section-title">Combos Especiais</section>
-    <section class="combos">
-        <div class="combo" onclick="showPopup('combo1')">
-            <img src="combo1.jpg" alt="Combo 1">
-            <p>Combo 1: 3 Cachorros-Quentes</p>
-            <p>R$ 15,00</p>
-            <div class="combo-info" id="combo1">
-                <p>Inclui: 3 Cachorros-Quentes</p>
-            </div>
-        </div>
+  <div class="item">
+    <img src="https://via.placeholder.com/200x150" alt="Cuscuz Temperado">
+    <h2>Cuscuz Temperado</h2>
+    <p>Calabresa & Carne Moída</p>
+    <p>R$ 8,00</p>
+    <button>Adicionar ao Carrinho</button>
+  </div>
 
-        <!-- Adicionar mais combos aqui -->
-    </section>
+  <div class="item">
+    <img src="https://via.placeholder.com/200x150" alt="Panqueca">
+    <h2>Panqueca</h2>
+    <p>Queijo, presunto, carne moída, frango, calabresa<br>Com arroz & batata palha R$ 17,00<br>Sem acompanhamento R$ 8,00</p>
+    <button>Adicionar ao Carrinho</button>
+  </div>
 
-    <div class="popup" id="popup">
-        <div class="popup-content">
-            <span id="popup-text"></span>
-            <button class="popup-button" onclick="closePopup()">Fechar</button>
-        </div>
-    </div>
+  <div class="item">
+    <h2>Bebidas</h2>
+    <p>Refrigerante 1L - R$ 6,50 / R$ 8,00<br>Refri 250ml - R$ 3,00<br>Refri Lata - R$ 5,00<br>Suco - R$ 3,00</p>
+    <button>Adicionar ao Carrinho</button>
+  </div>
 
-    <script>
-        function showPopup(id) {
-            var info = document.getElementById(id);
-            document.getElementById('popup-text').innerText = info.innerText;
-            document.getElementById('popup').style.display = 'flex';
-        }
+  <div class="item">
+    <h2>Combos Promocionais</h2>
+    <p>3 Cachorro-Quentes - R$ 15,00<br>3 Bauru + Batata M Calabresa + Refri 1L - R$ 45,00<br>1 Bauru + Cachorro-Quente + Refri 250ml - R$ 17,00<br>2 Bauru + 2 Cachorro-Quente + 2 Refri Lata - R$ 34,00<br>3 Cachorro-Quente + Batata M + Refri 1L - R$ 25,00</p>
+    <button>Adicionar ao Carrinho</button>
+  </div>
+</section>
 
-        function closePopup() {
-            document.getElementById('popup').style.display = 'none';
-        }
-    </script>
+<footer>
+  <p>Contato WhatsApp: 84 99847-7906</p>
+  <a href="https://wa.me/5584999461520" target="_blank">
+    <button style="background-color:#c40000;color:white;padding:10px 20px;border:none;border-radius:5px;cursor:pointer;">Pedir pelo WhatsApp</button>
+  </a>
+  <p>&copy; 2025 L.F Luzia & Fernanda Saboreando Sonhos</p>
+</footer>
 
 </body>
 </html>
